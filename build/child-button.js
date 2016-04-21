@@ -7,8 +7,8 @@ var ChildButton = React.createClass({
   displayName: "ChildButton",
 
   render: function render() {
-    var iconClass = "mfb-component__child-icon " + this.props.icon,
-        className = classnames("mfb-component__button--child", this.props.className);
+    var iconClass = classnames("mfb-component__child-icon", this.props.icon);
+    var className = classnames("mfb-component__button--child", this.props.className);
     return React.createElement(
       "li",
       null,

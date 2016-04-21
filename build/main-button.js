@@ -16,10 +16,10 @@ var MainButton = React.createClass({
     };
   },
   render: function render() {
-    var iconResting = classnames("mfb-component__main-icon--resting", this.props.iconResting),
-        iconActive = classnames("mfb-component__main-icon--active", this.props.iconActive),
-        mainClass = classnames("mfb-component__button--main", this.props.className),
-        children = this.props.children || [React.createElement("i", { className: iconResting }), React.createElement("i", { className: iconActive })];
+    var iconResting = classnames("mfb-component__main-icon--resting", this.props.iconResting);
+    var iconActive = classnames("mfb-component__main-icon--active", this.props.iconActive);
+    var mainClass = classnames("mfb-component__button--main", this.props.className);
+    var children = this.props.children || [React.createElement("i", { className: iconResting }), React.createElement("i", { className: iconActive })];
 
     if (this.props.label) {
       return React.createElement(
