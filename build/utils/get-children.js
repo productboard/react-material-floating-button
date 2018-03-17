@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-var Children = require("react").Children;
+var Children = require('react').Children;
 
-var MainButton = require("../main-button");
+var MainButton = require('../main-button');
 
 function getChildren(children) {
   var buttons = {

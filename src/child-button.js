@@ -3,8 +3,8 @@
 var React = require('react');
 var classnames = require('classnames');
 
-var ChildButton = React.createClass({
-  render: function(){
+class ChildButton extends React.Component {
+  render() {
     var iconClass = classnames('mfb-component__child-icon', this.props.icon);
     var className = classnames('mfb-component__button--child', this.props.className);
     return (
@@ -20,6 +20,6 @@ var ChildButton = React.createClass({
       </li>
     );
   }
-});
+}
 
 module.exports = ChildButton;

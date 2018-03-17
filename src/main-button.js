@@ -3,17 +3,16 @@
 var React = require('react');
 var classnames = require('classnames');
 
-var MainButton = React.createClass({
-  getDefaultProps: function(){
-    return {
-      href: '#',
-      onClick: function(){},
-      iconResting: '',
-      iconActive: '',
-      label: null
-    };
-  },
-  render: function(){
+class MainButton extends React.Component {
+  static defaultProps = {
+    href: '#',
+    onClick: function(){},
+    iconResting: '',
+    iconActive: '',
+    label: null
+  };
+
+  render() {
     var iconResting = classnames('mfb-component__main-icon--resting', this.props.iconResting);
     var iconActive = classnames('mfb-component__main-icon--active', this.props.iconActive);
     var mainClass = classnames('mfb-component__button--main', this.props.className);
@@ -36,6 +35,6 @@ var MainButton = React.createClass({
       );
     }
   }
-});
+}
 
 module.exports = MainButton;

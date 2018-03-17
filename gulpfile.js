@@ -5,7 +5,10 @@ var babel = require('gulp-babel');
 
 gulp.task('js', function(){
   return gulp.src('./src/**/*.js')
-    .pipe(babel())
+    .pipe(babel({
+      presets: ['env', 'react'],
+      plugins: ['transform-class-properties']
+    }))
     .pipe(gulp.dest('build'));
 });
 

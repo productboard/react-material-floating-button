@@ -1,35 +1,33 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
 
 var getClasses = require('./utils/get-classes');
 var getChildren = require('./utils/get-children');
 var childrenValidator = require('./utils/children-validator');
 
-var Menu = React.createClass({
-
-  propTypes: {
-    effect: React.PropTypes.oneOf(['zoomin', 'slidein', 'slidein-spring', 'fountain']).isRequired,
-    position: React.PropTypes.oneOf(['tl', 'tr', 'bl', 'br']).isRequired,
+class Menu extends React.Component {
+  static propTypes = {
+    effect: PropTypes.oneOf(['zoomin', 'slidein', 'slidein-spring', 'fountain']).isRequired,
+    position: PropTypes.oneOf(['tl', 'tr', 'bl', 'br']).isRequired,
     children: childrenValidator
-  },
+  };
 
-  getInitialState: function() {
-    return {
-      isOpen: false
-    };
-  },
+  state = {
+    isOpen: false
+  };
 
-  toggleMenu: function(evt) {
+  toggleMenu(evt) {
     evt.preventDefault();
 
     // flip the state from open to close and viceversa
     this.setState({
       isOpen: !this.state.isOpen
     });
-  },
+  }
 
-  render: function() {
+  render() {
     var classes = getClasses(this.props);
     var buttons = getChildren(this.props.children);
 
@@ -51,6 +49,6 @@ var Menu = React.createClass({
       </ul>
     );
   }
-});
+}
 
 module.exports = Menu;
